@@ -10,6 +10,7 @@ Source0:	http://apwal.free.fr/download/%{name}-%{version}.tar.gz
 URL:		http://apwal.free.fr/
 BuildRequires:	gtk+2-devel
 BuildRequires:	libxml2-devel
+BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
