@@ -1,12 +1,12 @@
 Summary:	Application launcher
 Summary(pl):	Program do uruchamiania aplikacji
 Name:		apwal
-Version:	0.4.4
+Version:	0.4.5
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://apwal.free.fr/download/%{name}-%{version}.tar.gz
-# Source0-md5:	87327fd1665d64c58b675708de1f0067
+# Source0-md5:	2f15a1a680f842d8373a1c2725b53130
 URL:		http://apwal.free.fr/
 BuildRequires:	gtk+2-devel
 BuildRequires:	libxml2-devel
