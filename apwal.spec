@@ -2,12 +2,13 @@ Summary:	Application launcher
 Summary(pl):	Program do uruchamiania aplikacji
 Name:		apwal
 Version:	0.4.5
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://apwal.free.fr/download/%{name}-%{version}.tar.gz
 # Source0-md5:	2f15a1a680f842d8373a1c2725b53130
 URL:		http://apwal.free.fr/
+Patch0:		%{name}-Makefile.patch
 BuildRequires:	gtk+2-devel
 BuildRequires:	libxml2-devel
 BuildRequires:	pkgconfig
@@ -25,14 +26,19 @@ u¿yciu edytora.
 
 %prep
 %setup -q -n %{name}
+%patch0 -p1
 
 %build
-%{__make}
+%{__make} \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags} `pkg-config --cflags gtk+-2.0 gthread-2.0`" \
+	LDFLAGS="%{rpmldflags} `pkg-config --libs gtk+-2.0 gthread-2.0` `xml2-config --libs`"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_pixmapsdir},%{_mandir}/man1}
-install src/%{name} $RPM_BUILD_ROOT%{_bindir}/
+
+install src/%{name} $RPM_BUILD_ROOT%{_bindir}
 ln -s %{_bindir}/%{name} $RPM_BUILD_ROOT%{_bindir}/%{name}-editor
 cp -aR pixmaps/* $RPM_BUILD_ROOT%{_pixmapsdir}
 install debian/%{name}.1 $RPM_BUILD_ROOT%{_mandir}/man1
