@@ -1,0 +1,32 @@
+--- apwal.orig/src/Makefile	2005-12-25 11:42:03.000000000 +0100
++++ apwal/src/Makefile	2005-12-25 11:42:46.000000000 +0100
+@@ -24,11 +24,11 @@
+ ifdef APWAL_DEBUG
+ all: checktraceformat apwal tags
+ apwal: $(OBJS)
+-	gcc -o $@ $^ $(LDFLAGS)
++	$(CC) -o $@ $^ $(LDFLAGS)
+ else
+ all: apwal
+ apwal: $(OBJS)
+-	gcc -o $@ $^ $(LDFLAGS)
++	$(CC) -o $@ $^ $(LDFLAGS)
+ 	strip $@
+ endif
+ 
+@@ -37,12 +37,12 @@
+ 	ln -sf /usr/local/bin/apwal /usr/local/bin/apwal-editor
+ 
+ .c.o: $(INCS)
+-	gcc -c $< -o $*.o $(CFLAGS)
++	$(CC) -c $< -o $*.o $(CFLAGS)
+ 
+ xmlrc.o: xmlrc.c $(INCS)
+-	gcc -c $< -o $*.o $(CFLAGS) `xml2-config --cflags`
++	$(CC) -c $< -o $*.o $(CFLAGS) `xml2-config --cflags`
+ about.o: about.c $(INCS) ../Makefile.inc
+-	gcc -c $< -o $*.o $(CFLAGS) -DAPWAL_VERSION=\"$(VERS)\"
++	$(CC) -c $< -o $*.o $(CFLAGS) -DAPWAL_VERSION=\"$(VERS)\"
+ 
+ gtkstuff.o: pixbufinline.inc
+ xmlrc.o: xmlrcinline.inc
