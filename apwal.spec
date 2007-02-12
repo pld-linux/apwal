@@ -1,5 +1,5 @@
 Summary:	Application launcher
-Summary(pl):	Program do uruchamiania aplikacji
+Summary(pl.UTF-8):   Program do uruchamiania aplikacji
 Name:		apwal
 Version:	0.4.5
 Release:	2
@@ -19,10 +19,10 @@ Apwal is an simple and powerful application launcher. It is composed
 in 2 parts: the application launcher itself and a good looking easy to
 use editor.
 
-%description -l pl
-Apwal jest prostym i potê¿nym programem do uruchamiania aplikacji.
-Zbudowany jest z dwóch czê¶ci: do uruchamiania aplikacji i ³atwego w
-u¿yciu edytora.
+%description -l pl.UTF-8
+Apwal jest prostym i potÄ™Å¼nym programem do uruchamiania aplikacji.
+Zbudowany jest z dwÃ³ch czÄ™Å›ci: do uruchamiania aplikacji i Å‚atwego w
+uÅ¼yciu edytora.
 
 %prep
 %setup -q -n %{name}
