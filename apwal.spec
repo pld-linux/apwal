@@ -1,5 +1,5 @@
 Summary:	Application launcher
-Summary(pl.UTF-8):   Program do uruchamiania aplikacji
+Summary(pl.UTF-8):	Program do uruchamiania aplikacji
 Name:		apwal
 Version:	0.4.5
 Release:	2
